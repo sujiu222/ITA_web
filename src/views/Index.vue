@@ -186,7 +186,7 @@
 
       </div>
     </div>
-    <div class="product-group" id="以前团队" style=" margin-top: 100px;">
+    <!-- <div class="product-group" id="以前团队" style=" margin-top: 100px;">
       <h2 class="group-title">专业团队 </h2>
       <span class="group-description">现在ITA前线成员</span>
       <div class="group-items">
@@ -326,7 +326,7 @@
 
 
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
