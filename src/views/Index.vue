@@ -1,29 +1,21 @@
 <template>
   <div class="index">
     <div class="top">
-      <el-menu :ellipsis=false :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
-        background-color="black" text-color="#fff" active-text-color="#ffd04b">
-        <el-menu-item index="1">首页</el-menu-item>
-        <el-menu-item index="" @click="ymbhp">关于成理</el-menu-item>
-        <el-menu-item index="" @click="join">
-          加入我们
+      <!-- <el-menu :ellipsis=false class="el-menu-demo" mode="horizontal" background-color="black" text-color="#fff"
+        active-text-color="#ffd04b">
+        <el-menu-item index="1-1" @click="shouye">首页</el-menu-item>
+        <el-menu-item index="1-2" @click="ymbhp">关于成理</el-menu-item>
+        <el-menu-item index="1-3" @click="join">加入我们</el-menu-item>
+        <el-menu-item index="1-4" @click="guanyuwomen">关于我们</el-menu-item>
+      </el-menu> -->
+      <!-- <el-menu :ellipsis=false :default-active="activeIndex2" class="el-menu-demo" mode="horizontal"
+        background-color="black" text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
+        <el-menu-item index="1-1" @click="shouye">首页</el-menu-item>
+        <el-menu-item index="1-2" @click="ymbhp">关于成理</el-menu-item>
+        <el-menu-item index="1-3" @click="join">加入我们</el-menu-item>
+        <el-menu-item index="1-4" @click="guanyuwomen">关于我们</el-menu-item>
 
-        </el-menu-item>
-        <!-- <el-sub-menu index="2">
-          <template #title>Workspace</template>
-<el-menu-item index="2-1">item one</el-menu-item>
-<el-menu-item index="2-2">item two</el-menu-item>
-<el-menu-item index="2-3">item three</el-menu-item>
-<el-sub-menu index="2-4">
-  <template #title>item four</template>
-  <el-menu-item index="2-4-1">item one</el-menu-item>
-  <el-menu-item index="2-4-2">item two</el-menu-item>
-  <el-menu-item index="2-4-3">item three</el-menu-item>
-</el-sub-menu>
-</el-sub-menu>
-<el-menu-item index="3" disabled>Info</el-menu-item>
-<el-menu-item index="4">Orders</el-menu-item> -->
-      </el-menu>
+      </el-menu> -->
     </div>
 
     <div class="content1">
@@ -46,6 +38,27 @@
       <span>sujiu</span>
       <span class="group-description" style="font-size: 15px;">欧里给给给给！！！！！</span>
     </div>
+    <div class="product-group" id="以前团队" style=" margin-top: 100px;">
+      <h2 class="group-title">社团简介 </h2>
+      <span class="group-description">为什么加入我们</span>
+      <div class="group-items" style="justify-content: center; align-items: center; text-align: center;">
+        <div class="content3">
+          <div class="text-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;我们是成都理工大学宜宾校区的学术型社团，我们希望构建一个专业、开放、互助的计算机各领域的学习平台，专注于计算机科学及其相关领域的探索与实践。无论你是游戏开发的爱好者，还是对前端、算法、后端、嵌入式技术有浓厚兴趣，你都能在这里学习到相关的知识，找到志同道合的伙伴！欢迎大家加入我们这个温暖的大家庭！
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
     <div class="product-group" id="团队" ref="productGroup">
       <h2 class="group-title">专业团队 </h2>
       <span class="group-description">现在ITA前线成员</span>
@@ -331,9 +344,20 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 const productGroup = ref(null);
 const activeIndex = ref('1');
+const router = useRouter();
+
+
+const guanyuwomen = () => {
+  router.push('/Intro');
+}
+const shouye = () => {
+  router.push('/#');
+}
 
 const join = () => {
   window.open(`https://qm.qq.com/q/9tPRlHXADS `, '_blank');
@@ -350,12 +374,21 @@ const ymbhp = () => {
 
 <style lang="scss" scoped>
 .index {
+  width: 100%;
+  max-width: 100vw;
+  /* 限制最大宽度 */
+  overflow-x: hidden;
+  /* 防止水平滚动 */
   background: #eef0f0;
   display: flex;
-  margin: auto;
   flex-direction: column;
-  //font-family: PingFangSC-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma, Arial, PingFang SC-Light, Microsoft YaHei;
   align-items: center;
+  width: 100%;
+  /* 确保宽度自适应 */
+  max-width: 100vw;
+  /* 限制最大宽度 */
+  overflow-x: hidden;
+  /* 隐藏水平溢出 */
 
   .top {
     display: flex;
@@ -460,6 +493,56 @@ h2.group-title {
   text-align: left;
 }
 
+div.content3 {
+  // display: flex;
+  // flex-direction: column;
+  // padding: 24px 32px;
+  // background: white;
+  // margin: 0 5%;
+  // border-radius: 12px;
+  // line-height: 1.5;
+  // max-width: 1200px;
+  // width: 750px;
+  // height: 200px;
+  // margin-top: 18px;
+  // border: 1px solid #e6e6ec;
+  // align-content: center;
+  // align-items: center;
+  // box-shadow: 2px #e6e6ec;
+
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  padding: auto;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  text-align: center;
+}
+
+div.text-content {
+
+  font-size: 21px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
+  background: white;
+  margin: 0 5%;
+  text-align: left;
+  border-radius: 12px;
+  line-height: 1.5;
+  max-width: 1200px;
+  width: 950px;
+  height: 200px;
+  margin-top: 18px;
+  border: 1px solid #e6e6ec;
+  align-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px #c4c4cd;
+}
+
 div.content2 {
   // display: flex;
   // background: white;
@@ -490,6 +573,7 @@ span.group-description {
 }
 
 div.group-items {
+
   display: flex;
   flex-direction: row;
   justify-items: space-between;
@@ -498,6 +582,7 @@ div.group-items {
 }
 
 div.group-item {
+
   display: flex;
   margin-bottom: 60px;
   flex-direction: row;
@@ -537,6 +622,8 @@ a.group-item-link {
   color: #007bff;
   text-decoration: none;
 }
+
+
 
 div.group-info-intro {
   display: flex;
@@ -626,9 +713,9 @@ a.linkbutton-blue {
 
 }
 
-.index {
-  cursor: url('@/assets/normal.cur'), auto;
-}
+// .index {
+//   cursor: url('../assets/normal.cur'), auto;
+// }
 
 img.content2-img {
   margin-top: 30px;
@@ -637,5 +724,73 @@ img.content2-img {
   object-fit: contain;
   border-radius: 50%;
   /* 或者使用 cover */
+}
+
+@media (max-width: 600px) {
+  .content1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left_title {
+    font-size: 2rem;
+    /* 调整字体大小 */
+    text-align: center;
+    /* 居中对齐 */
+  }
+
+  .jpg {
+    width: 80%;
+    height: auto;
+    /* 保证图片缩放比例 */
+    margin: 10px 0;
+    /* 增加上下间距 */
+  }
+
+  .about-button {
+    width: 100%;
+    font-size: 1rem;
+    /* 调整按钮字体大小 */
+  }
+
+  .group-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 居中对齐 */
+  }
+
+  .group-item {
+    width: 100%;
+    /* 占满整行 */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+  }
+
+  .group-item-icon-img {
+    width: 80px;
+    /* 调整头像大小 */
+    height: 80px;
+    border-radius: 50%;
+    /* 圆形头像 */
+  }
+
+  .group-info {
+    text-align: center;
+    /* 信息居中 */
+  }
+
+  .about-button {
+    width: 100%;
+    /* 按钮自适应宽度 */
+    padding: 10px;
+    /* 内边距调整 */
+    font-size: 1rem;
+    /* 调整字体大小 */
+  }
+
 }
 </style>
